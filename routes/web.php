@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\TextGenerationController;
+
+Route::get('/', [TextGenerationController::class, 'index']);
+Route::post('/generate', [TextGenerationController::class, 'generate']);
+
 
 Route::get('/', function () {
     return view('welcome');
